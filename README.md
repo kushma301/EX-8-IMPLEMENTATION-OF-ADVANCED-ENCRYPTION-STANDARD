@@ -1,3 +1,6 @@
+## NAME: S.KUSHMA
+## REG NO: 212224040168
+
 ## EX: 8 IMPLEMENTATION OF ADVANCED ENCRYPTION STANDARD
 
 ## AIM:
@@ -13,8 +16,40 @@ To use Advanced Encryption Standard (AES) Algorithm for a practical application 
 7.	Store and display the original message as the decrypted text.
 
 ## PROGRAM:
-
+```
+#include <stdio.h> 
+#include <string.h> 
+void simpleAESEncrypt(char *plaintext, char *key, char *ciphertext) 
+{ 
+int i; 
+for (i = 0; i < strlen(plaintext); i++) 
+{ 
+ciphertext[i] = plaintext[i] ^ key[i % strlen(key)]; 
+} 
+ciphertext[i] = '\0'; 
+} 
+void simpleAESDecrypt(char *ciphertext, char *key, char *decryptedText) 
+{ 
+int i; 
+for (i = 0; i < strlen(ciphertext); i++) 
+{ 
+decryptedText[i] = ciphertext[i] ^ key[i % strlen(key)]; 
+} 
+decryptedText[i] = '\0'; 
+} 
+void printASCII(char *ciphertext) 
+{ 
+printf("Encrypted Message (ASCII values): "); 
+for (int i = 0; i < strlen(ciphertext); i++) 
+{ 
+printf("%d ", (unsigned char)ciphertext[i]); 
+} 
+printf("\n"); 
+}
+```
 ## OUTPUT:
+<img width="810" height="743" alt="CRYPTO EXP8 OUTPUT" src="https://github.com/user-attachments/assets/2fe355ae-551d-4c6d-97c7-1abf27407769" />
+
 
 ## RESULT:
 Hence, Advanced Encryption Standard (AES) Algorithm for a practical application like URL Encryption is done successfully.
